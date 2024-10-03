@@ -103,9 +103,8 @@ public class Main extends JFrame {
                         int id = (int) in.readObject(); // Deserializacja obiektu
                         klient.deleteParagon(id);
                     } else if ("DELETE_PRODUCT".equals(type)) {
-                        int id = (int) in.readObject(); // Deserializacja obiektu
-                        Produkt_na_paragonie p = (Produkt_na_paragonie) in.readObject(); // Deserializacja obiektu
-                        klient.deleteProduct(id, p);
+                        Paragon p = (Paragon) in.readObject(); // Deserializacja obiektu
+                        klient.deleteProduct(p);
                     } else {
                         break; // Przerywamy pętlę w przypadku nieznanego typu
                     }
